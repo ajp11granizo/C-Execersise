@@ -76,36 +76,110 @@ void numeroParImpar()
   int numero;
   printf("Ingrese un número entero: ");
   scanf("%d", &numero);
-  if (numero%2==0)
+  if (numero % 2 == 0)
   {
     printf("Numero %d es par", numero);
   }
   else
   {
-    printf("Numero %d es impar",numero);
+    printf("Numero %d es impar", numero);
   }
 }
-void tablaMultiplicar(){
+void tablaMultiplicar()
+{
   int numero;
   int resultado;
   printf("Ingrese un número entero: ");
   scanf("%d", &numero);
   printf("Tabla de multiplicar del %d\n", numero);
-  for (int i = 0; i <=10; i++)
+  for (int i = 0; i <= 10; i++)
   {
-    resultado=i*numero;
-    printf(" %d * %d = %d\n", numero, i,resultado);
+    resultado = i * numero;
+    printf(" %d * %d = %d\n", numero, i, resultado);
   }
-  
+}
+// Contador de Dígitos
+void contadorDigitos()
+{
+  int n;
+  int count = 0;
+  int temp;
+
+  printf("Ingrese un número entero: ");
+  scanf("%d", &n);
+  // Asegurarse de que el número no sea 0
+  temp = n;
+
+  // Contar los dígitos del número
+  while (temp != 0)
+  {
+    temp = temp / 10; // Elimina el último dígito
+    count++;          // Incrementa el contador
+  }
+  // Si el número ingresado es 0, el conteo será 0, así que el programa debería informar que no se puede contar los dígitos de 0
+  if (n == 0)
+  {
+    printf("El número ingresado es 0, no se puede contar sus dígitos con este programa.\n");
+  }
+  else
+  {
+    printf("El número tiene: %d dígitos\n", count);
+  }
+}
+// Calcular promedio de 5 notas
+void calcularPromedio5()
+{
+  int arraynotas[4];
+  int n = 0;
+  int i;
+  int suma = 0;
+  float porcentaje = 0.60;
+  float promedio = 0.0;
+
+  for (i = 0; i <= 4; i++)
+  {
+    printf("Ingrese un numero entero: ");
+    scanf("%d", &n);
+    arraynotas[i] = n;
+    suma = suma + arraynotas[i];
+  }
+  promedio = suma / 5.0; // Usa 5.0 para obtener un resultado en punto flotante
+  if (promedio >= porcentaje * 100)
+  {
+    printf("El promedio es: %f\n", promedio);
+  }
+  else
+  {
+    printf("El promedio no es suficiente. El promedio es: %f\n", promedio);
+  }
+}
+// Números Divisibles
+void numeroDivisibles()
+{
+  int arrayNum[101];
+  int i = 0;
+  int divisible = 0;
+  for (i = 0; i < 101; i++)
+  {
+    arrayNum[i] = i;
+    if (arrayNum[i] % 3 == 0)
+    {
+      printf("array[%d] = %d\n", i, arrayNum[i]);
+    }
+    
+  }
 }
 int main()
 {
   // Obtener la instancia y usar el Singleton
   // int result = sumaNumerosPares();
-  //numeroFactorial();
-  //numeroParImpar();
+  // numeroFactorial();
+  // numeroParImpar();
   // printf("%d\n", result);
-  tablaMultiplicar();
+  // tablaMultiplicar();
+  // contadorDigitos();
+  // calcularPromedio5();
+  numeroDivisibles();
   // Liberar la instancia cuando ya no se necesite
   free_instance();
 
