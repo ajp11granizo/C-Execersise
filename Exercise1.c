@@ -158,16 +158,54 @@ void numeroDivisibles()
 {
   int arrayNum[101];
   int i = 0;
-  int divisible = 0;
   for (i = 0; i < 101; i++)
   {
-    arrayNum[i] = i;
+    arrayNum[i] = i; // lleno el array con numeros.
     if (arrayNum[i] % 3 == 0)
     {
       printf("array[%d] = %d\n", i, arrayNum[i]);
     }
-    
   }
+}
+// Suma numero n
+void sumaNumerosN()
+{
+  int n = 1;
+  int numeros[100];
+  int suma = 0;
+  printf("Ingrese un numero entero: ");
+  scanf("%d", &n);
+
+  for (int i = 1; i <= n; i++)
+  {
+    numeros[i] = i;
+    suma = suma + numeros[i]; // Sumo cada digito
+    // printf("array[%d]\n", numeros[i]); //imprimo array
+  }
+  printf("La suma de los numeros desde 1 hasta %d es: %d\n", n, suma);
+}
+// Invierte numeros
+void invertirNumeros()
+{
+  int numero, invertido = 0;
+
+  // Pedir al usuario que introduzca un número
+  printf("Introduce un número entero: ");
+  scanf("%d", &numero);
+
+  // Usar un bucle while para invertir el número
+  while (numero != 0)
+  {
+    // Agregar el último dígito del número a invertido
+    invertido = invertido * 10 + numero % 10;
+
+    // Eliminar el último dígito del número
+    numero /= 10;
+  }
+
+  // Imprimir el número invertido
+  printf("Número invertido: %d\n", invertido);
+
 }
 int main()
 {
@@ -179,9 +217,10 @@ int main()
   // tablaMultiplicar();
   // contadorDigitos();
   // calcularPromedio5();
-  numeroDivisibles();
+  // numeroDivisibles();
+  // sumaNumerosN();
+  invertirNumeros();
   // Liberar la instancia cuando ya no se necesite
   free_instance();
-
   return 0;
 }
