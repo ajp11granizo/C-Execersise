@@ -205,8 +205,24 @@ void invertirNumeros()
 
   // Imprimir el número invertido
   printf("Número invertido: %d\n", invertido);
-
 }
+
+void patronAsteristicoImpresos()
+{
+  int numero=0;
+  printf("Introduce un número entero: ");
+  scanf("%d", &numero);
+
+  for (int i = 1; i <= numero; i++)
+  {
+     printf("\n");
+    for (int a = 1; a <= i; a++)
+    {
+      printf("*");
+    }
+  }
+}
+
 int main()
 {
   // Obtener la instancia y usar el Singleton
@@ -219,7 +235,8 @@ int main()
   // calcularPromedio5();
   // numeroDivisibles();
   // sumaNumerosN();
-  invertirNumeros();
+  //invertirNumeros();
+  patronAsteristicoImpresos();
   // Liberar la instancia cuando ya no se necesite
   free_instance();
   return 0;
