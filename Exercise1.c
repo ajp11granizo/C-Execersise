@@ -215,10 +215,10 @@ void patronAsteristicoImpresos()
 
   for (int i = 1; i <= numero; i++)
   {
-     printf("\n");
+     printf("\n");  // Después de cada línea de asteriscos, agrega un salto de línea
     for (int a = 1; a <= i; a++)
     {
-      printf("*");
+      printf("*"); // Solo imprime los asteriscos
     }
   }
 }
